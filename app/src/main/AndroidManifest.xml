@@ -13,6 +13,39 @@
         android:theme="@style/Theme.HostelComply"
         tools:targetApi="31">
         <activity
+            android:name=".Plumber_Registration"
+            android:exported="false" />
+        <activity
+            android:name=".Plumber_Loginphone"
+            android:exported="false" />
+        <activity
+            android:name=".Plumber_Login"
+            android:exported="false" />
+        <activity
+            android:name=".Registration"
+            android:exported="false" />
+        <activity
+            android:name=".Loginphone"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".ElectricianRegistration"
+            android:exported="false" />
+        <activity
+            android:name=".Electricianloginphone"
+            android:exported="false" />
+        <activity
+            android:name=".Electricianlogin"
+            android:exported="false" />
+        <activity
+            android:name=".ChooseOne"
+            android:exported="false" />
+        <activity
+            android:name=".MainMenu"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
