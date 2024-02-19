@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1029893094568",
+    "firebase_url": "https://hostelcomply-71c06-default-rtdb.firebaseio.com",
+    "project_id": "hostelcomply-71c06",
+    "storage_bucket": "hostelcomply-71c06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029893094568:android:312045748b73e26a75169d",
+        "android_client_info": {
+          "package_name": "my.hostelcomply.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKifdi9yJa8M1Ckronn11ZJbdTgsGyxhk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
