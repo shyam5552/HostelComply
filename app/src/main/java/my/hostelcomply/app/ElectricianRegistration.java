@@ -138,6 +138,22 @@ public class ElectricianRegistration extends AppCompatActivity {
             }
         });
 
+        Emaill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ElectricianRegistration.this,Electricianlogin.class));
+                finish();
+            }
+        });
+        Phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ElectricianRegistration.this,Electricianloginphone.class));
+                finish();
+            }
+        });
+
+
     }
 
     String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
