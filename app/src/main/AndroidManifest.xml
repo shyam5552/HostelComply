@@ -13,6 +13,27 @@
         android:theme="@style/Theme.HostelComply"
         tools:targetApi="31">
         <activity
+            android:name=".PlumberVerifyPhone"
+            android:exported="false" />
+        <activity
+            android:name=".Sendotp"
+            android:exported="false" />
+        <activity
+            android:name=".Panel_BottomNavigation"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".PlumberPanel_BottomNavigation"
+            android:exported="false" />
+        <activity
+            android:name=".Plumbersendotp"
+            android:exported="false" />
+        <activity
+            android:name=".VerifyPhone"
+            android:exported="false" />
+        <activity
             android:name=".Electriciansendotp"
             android:exported="false" />
         <activity

@@ -31,10 +31,13 @@ public class ElectricianVerifyPhone extends AppCompatActivity {
     TextView txt;
     EditText entercode;
     String phonenumber;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_electrician_verify_phone);
+
+
         phonenumber = getIntent().getStringExtra("phonenumber").trim();
 
         sendverificationcode(phonenumber);

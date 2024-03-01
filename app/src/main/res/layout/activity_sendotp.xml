@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Electriciansendotp">
-
+    tools:context=".Sendotp">
     <LinearLayout
         android:id="@+id/linearlayout"
         android:layout_width="280dp"
@@ -99,5 +98,4 @@
 
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,7 @@ package my.hostelcomply.app;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.TaskExecutors;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,36 +24,37 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class Electriciansendotp extends AppCompatActivity {
+public class PlumberVerifyPhone extends AppCompatActivity {
     String verificationId;
     FirebaseAuth FAuth;
     Button verify;
-    TextView txt;
-    String phonenumber;
     Button Resend;
+    TextView txt;
     EditText entercode;
-
+    String phonenumber;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_electriciansendotp);
+        setContentView(R.layout.activity_plumber_verify_phone);
 
         phonenumber = getIntent().getStringExtra("phonenumber").trim();
+
         sendverificationcode(phonenumber);
         entercode = (EditText) findViewById(R.id.phoneno);
         txt = (TextView) findViewById(R.id.text);
         Resend = (Button) findViewById(R.id.Resendotp);
         FAuth = FirebaseAuth.getInstance();
+        verify = (Button) findViewById(R.id.Verify);
         Resend.setVisibility(View.INVISIBLE);
         txt.setVisibility(View.INVISIBLE);
-        verify = (Button) findViewById(R.id.Verify);
         verify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                Resend.setVisibility(View.INVISIBLE);
                 String code = entercode.getText().toString().trim();
+                Resend.setVisibility(View.INVISIBLE);
 
                 if (code.isEmpty() && code.length() < 6) {
                     entercode.setError("Enter code");
@@ -104,6 +104,7 @@ public class Electriciansendotp extends AppCompatActivity {
 
             }
         });
+
     }
 
     private void Resendotp(String phonenumber) {
@@ -114,21 +115,24 @@ public class Electriciansendotp extends AppCompatActivity {
 
     private void verifyCode(String code) {
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
-        signInwithCredential(credential);
+        linkCredential(credential);
     }
 
-    private void signInwithCredential(PhoneAuthCredential credential) {
+    private void linkCredential(PhoneAuthCredential credential) {
 
-        FAuth.signInWithCredential(credential)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        FAuth.getCurrentUser().linkWithCredential(credential)
+                .addOnCompleteListener(PlumberVerifyPhone.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Intent intent = new Intent(Electriciansendotp.this, ElectricianPanel_BottomNavigation.class);
+
+                            Intent intent = new Intent(PlumberVerifyPhone.this,MainMenu.class);
                             startActivity(intent);
                             finish();
+
+
                         } else {
-                            ReusableCodeForAll.ShowAlert(Electriciansendotp.this, "Error", task.getException().getMessage());
+                            ReusableCodeForAll.ShowAlert(PlumberVerifyPhone.this,"Error",task.getException().getMessage());
                         }
                     }
                 });
@@ -159,7 +163,6 @@ public class Electriciansendotp extends AppCompatActivity {
             super.onCodeSent(s, forceResendingToken);
 
             verificationId = s;
-
         }
 
         @Override
@@ -177,7 +180,7 @@ public class Electriciansendotp extends AppCompatActivity {
         @Override
         public void onVerificationFailed(FirebaseException e) {
 
-            Toast.makeText(Electriciansendotp.this, e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(PlumberVerifyPhone.this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
     };
 }

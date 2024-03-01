@@ -3,7 +3,6 @@ package my.hostelcomply.app;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -15,7 +14,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.TaskExecutors;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,7 +23,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class Electriciansendotp extends AppCompatActivity {
+public class Plumbersendotp extends AppCompatActivity {
     String verificationId;
     FirebaseAuth FAuth;
     Button verify;
@@ -33,11 +31,11 @@ public class Electriciansendotp extends AppCompatActivity {
     String phonenumber;
     Button Resend;
     EditText entercode;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_electriciansendotp);
+        setContentView(R.layout.activity_plumbersendotp);
+
 
         phonenumber = getIntent().getStringExtra("phonenumber").trim();
         sendverificationcode(phonenumber);
@@ -124,11 +122,11 @@ public class Electriciansendotp extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Intent intent = new Intent(Electriciansendotp.this, ElectricianPanel_BottomNavigation.class);
+                            Intent intent = new Intent(Plumbersendotp.this, PlumberPanel_BottomNavigation.class);
                             startActivity(intent);
                             finish();
                         } else {
-                            ReusableCodeForAll.ShowAlert(Electriciansendotp.this, "Error", task.getException().getMessage());
+                            ReusableCodeForAll.ShowAlert(Plumbersendotp.this, "Error", task.getException().getMessage());
                         }
                     }
                 });
@@ -177,7 +175,7 @@ public class Electriciansendotp extends AppCompatActivity {
         @Override
         public void onVerificationFailed(FirebaseException e) {
 
-            Toast.makeText(Electriciansendotp.this, e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(Plumbersendotp.this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
     };
 }

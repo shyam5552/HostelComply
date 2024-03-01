@@ -14,48 +14,55 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Electricianloginphone extends AppCompatActivity {
     EditText num;
     Button sendotp,signinemail;
-    TextView signup;
-    FirebaseAuth Fauth;
-    String number;
+    TextView txtsignup;
+    FirebaseAuth FAuth;
+    String numberr;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_electricianloginphone);
-        num = (EditText)findViewById(R.id.number);
-        sendotp = (Button)findViewById(R.id.otp);
-        signinemail=(Button)findViewById(R.id.btnEmail);
-        signup = (TextView)findViewById(R.id.acsignup);
 
-        Fauth = FirebaseAuth.getInstance();
+        num=(EditText)findViewById(R.id.number);
+        sendotp=(Button)findViewById(R.id.otp);
+        signinemail=(Button)findViewById(R.id.btnEmail);
+        txtsignup=(TextView)findViewById(R.id.acsignup);
+
+
+        FAuth=FirebaseAuth.getInstance();
 
         sendotp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                number=num.getText().toString().trim();
-                String Phonenum = "+91"+number;
-                Intent b = new Intent(Electricianloginphone.this,Electriciansendotp.class);
-
-
-                b.putExtra("Phonenum",Phonenum);
+                numberr=num.getText().toString().trim();
+                String phonenumber= "+91" + numberr;
+                Intent b=new Intent(Electricianloginphone.this,Electriciansendotp.class);
+                b.putExtra("phonenumber",phonenumber);
                 startActivity(b);
                 finish();
 
             }
         });
-        signup.setOnClickListener(new View.OnClickListener() {
+
+        txtsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Electricianloginphone.this,ElectricianRegistration.class));
+                Intent a=new Intent(Electricianloginphone.this,ElectricianRegistration.class);
+                startActivity(a);
                 finish();
             }
         });
+
         signinemail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Electricianloginphone.this,Electricianlogin.class));
+
+                Intent em=new Intent(Electricianloginphone.this, Electricianlogin.class);
+                startActivity(em);
                 finish();
             }
         });
+
     }
 }
