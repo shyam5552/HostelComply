@@ -24,11 +24,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-import my.hostelcomply.app.MainMenu;
-import my.hostelcomply.app.R;
-import my.hostelcomply.app.ReusableCodeForAll;
-
-public class VerifyPhone extends AppCompatActivity {
+public class VerifyPhone extends AppCompatActivity{
     String verificationId;
     Button Resend;
     TextView txt;

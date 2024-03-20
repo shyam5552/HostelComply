@@ -14,6 +14,7 @@ public class ChooseOne extends AppCompatActivity {
     Intent intent;
     String type;
     ConstraintLayout bgimage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

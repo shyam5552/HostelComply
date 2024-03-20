@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
-public class Registration extends AppCompatActivity {
+public class Registration extends AppCompatActivity{
 
 
     TextInputLayout Fname,Lname,Roomnumber,Email,Pass,cpass,mobileno;

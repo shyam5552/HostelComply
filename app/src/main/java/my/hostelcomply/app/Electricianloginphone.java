@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Electricianloginphone extends AppCompatActivity {
+public class Electricianloginphone extends AppCompatActivity{
     EditText num;
     Button sendotp,signinemail;
     TextView txtsignup;

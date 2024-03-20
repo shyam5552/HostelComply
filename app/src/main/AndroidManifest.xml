@@ -13,13 +13,31 @@
         android:theme="@style/Theme.HostelComply"
         tools:targetApi="31">
         <activity
+            android:name=".electricianPanel.ElectricianpendingComplaintsFragment"
+            android:exported="false" />
+        <activity
+            android:name=".electricianPanel.Electrical_Hostel_layout"
+            android:exported="false" />
+        <activity
+            android:name=".electricianPanel.ElectrcianSolvedComplaintFragment"
+            android:exported="false" />
+        <activity
+            android:name=".electricianPanel.ElectricianPendingComplaintsFragment"
+            android:exported="false" />
+        <activity
+            android:name=".studentPanel.Student_postComplaint"
+            android:exported="false" />
+        <activity
+            android:name=".studentPanel.Student_postplumber_complaint"
+            android:exported="false" />
+        <activity
+            android:name=".Panel_BottomNavigation"
+            android:exported="false" />
+        <activity
             android:name=".PlumberVerifyPhone"
             android:exported="false" />
         <activity
             android:name=".Sendotp"
-            android:exported="false" />
-        <activity
-            android:name=".Panel_BottomNavigation"
             android:exported="false" />
         <activity
             android:name=".ForgotPassword"

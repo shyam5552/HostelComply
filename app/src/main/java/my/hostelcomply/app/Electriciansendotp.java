@@ -3,7 +3,6 @@ package my.hostelcomply.app;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -25,7 +24,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class Electriciansendotp extends AppCompatActivity {
+public class Electriciansendotp extends AppCompatActivity{
     String verificationId;
     FirebaseAuth FAuth;
     Button verify;

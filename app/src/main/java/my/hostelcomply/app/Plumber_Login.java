@@ -18,7 +18,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Plumber_Login extends AppCompatActivity {
+public class Plumber_Login extends AppCompatActivity{
     TextInputLayout email,pass;
     Button Signin,Signinphone;
     TextView Forgotpassword , signup;

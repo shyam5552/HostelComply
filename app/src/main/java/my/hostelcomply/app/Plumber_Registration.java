@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
-public class Plumber_Registration extends AppCompatActivity {
+public class Plumber_Registration extends AppCompatActivity{
     TextInputLayout Fname,Lname,Email,Pass,cpass,mobileno;
     Button signup, Emaill, Phone;
     FirebaseAuth FAuth;

@@ -10,7 +10,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class MainMenu extends AppCompatActivity {
+public class MainMenu extends AppCompatActivity{
     Button signinemail,signinphone,signup;
     ImageView bgimage;
     @Override

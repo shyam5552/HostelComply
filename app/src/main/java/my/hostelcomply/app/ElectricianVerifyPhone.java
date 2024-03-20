@@ -23,7 +23,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class ElectricianVerifyPhone extends AppCompatActivity {
+public class ElectricianVerifyPhone extends AppCompatActivity{
     String verificationId;
     FirebaseAuth FAuth;
     Button verify;

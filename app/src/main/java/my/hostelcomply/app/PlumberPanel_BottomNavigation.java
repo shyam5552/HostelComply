@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class PlumberPanel_BottomNavigation extends AppCompatActivity {
+public class PlumberPanel_BottomNavigation extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
